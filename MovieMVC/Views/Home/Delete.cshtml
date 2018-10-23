@@ -1,0 +1,47 @@
+﻿@model MovieMVC.Models.Movie
+
+<div class="row">
+    <div class="col-md-12 movie-content">
+        <h1>Está seguro de querer eliminar esta peli?</h1>
+        <div class="table">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.MovieName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MovieName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Rating)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+                </dt>
+
+                <dd>
+                    @Model.ReleaseDate.ToShortDateString()
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    @Html.ActionLink("Volver al Home", "Index")
+                </div>
+            }
+        </div>
+
+    </div>
+</div>	
