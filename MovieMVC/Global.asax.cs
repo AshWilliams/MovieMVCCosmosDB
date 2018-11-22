@@ -21,5 +21,12 @@ namespace MovieMVC
             DefaultModelBinder.ResourceClassKey = "Messages";
         }
 
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            CultureInfo culture = new CultureInfo("es-MX");
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+        }
+
     }
 }

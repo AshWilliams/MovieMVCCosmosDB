@@ -12,12 +12,14 @@ namespace MovieMVC.Models
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Messages),
+    ErrorMessageResourceName = "Required")]
         [Display(Name = "Nombre")]
         [JsonProperty(PropertyName = "movieName")]
         public string MovieName { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Messages),
+    ErrorMessageResourceName = "Required")]
         [JsonProperty(PropertyName = "rating")]
         public string Rating { get; set; }
 
