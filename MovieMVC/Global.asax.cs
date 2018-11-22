@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -17,15 +18,9 @@ namespace MovieMVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             DocumentDBRepository<MovieMVC.Models.Movie>.Initialize();          
             ClientDataTypeModelValidatorProvider.ResourceClassKey = "Messages";
-            DefaultModelBinder.ResourceClassKey = "Messages";      
-            
+            DefaultModelBinder.ResourceClassKey = "Messages";
+
         }
 
-        protected void Application_BeginRequest(object sender, EventArgs e)
-        {
-            CultureInfo culture = new CultureInfo("es-MX");
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-        }
     }
 }
