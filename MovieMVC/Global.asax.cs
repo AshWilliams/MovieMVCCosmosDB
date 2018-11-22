@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,7 +19,6 @@ namespace MovieMVC
             DocumentDBRepository<MovieMVC.Models.Movie>.Initialize();          
             ClientDataTypeModelValidatorProvider.ResourceClassKey = "Messages";
             DefaultModelBinder.ResourceClassKey = "Messages";
-
         }
 
     }
