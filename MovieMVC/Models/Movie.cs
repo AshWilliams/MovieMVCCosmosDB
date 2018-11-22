@@ -21,7 +21,8 @@ namespace MovieMVC.Models
         [JsonProperty(PropertyName = "rating")]
         public string Rating { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(Resources.Messages),
+    ErrorMessageResourceName = "Required")]
         [Display(Name = "Fecha de Estreno")]
         [JsonProperty(PropertyName = "releaseDate")]
         public DateTime ReleaseDate { get; set; }
